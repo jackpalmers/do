@@ -80,7 +80,7 @@ $data = mysqli_fetch_assoc($req);
         <td><?php echo $data['N°de_Serie']; ?></td>
         <td><?php echo $data['Description']; ?></td>
 
-        
+
       <td><a href="correction.php?id=<?php echo $data["id"]; ?>">Retourner</a></td>
       <td><a href="delete.php?id=<?php echo $data["id"]; ?>">Suppprimer</a></td>
 
@@ -88,7 +88,7 @@ $data = mysqli_fetch_assoc($req);
 
       echo"</tr>";
 
-      mysql_set_charset('utf8');
+      mysqli_set_charset('utf8');
 
       }
 

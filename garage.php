@@ -104,7 +104,7 @@ while($data = mysqli_fetch_array($res))
 <?php
 
 
-mysql_set_charset('utf8');
+mysqli_set_charset('utf8');
 
 
 
