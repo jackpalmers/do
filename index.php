@@ -13,8 +13,8 @@ session_start();
 
 error_reporting(-1);
 
-include("connexion.php");
-include("formulaire.php");
+include("connexion/connexion.php");
+include("pages/formulaire.php");
 
 
 //Page à Ouvert si le get est present
