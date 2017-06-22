@@ -5,8 +5,8 @@ function export_csv(){
 
   include("connexion.php");
 
-    mysql_connect('localhost', 'root', '');
-    mysql_select_db('do');
+    mysqli_connect('localhost', 'root', '');
+    mysqli_select_db('do');
 
     // Titre des colonnes de votre fichier .CSV
     $fichier = "N°Entree_CRESA; N°IMEI; N°de_Serie";
@@ -14,7 +14,7 @@ function export_csv(){
 
     // Requête SQL
     $sql = "SELECT N°Entree_CRESA, N°IMEI, N°de_Serie FROM materiels";
-    //$req = mysql_query($sql);
+    //$req = mysqli_query($sql);
     $req = mysqli_query($dbb, $sql) or die(mysqli_error($dbb));
 
     // Enregistrement des résultats ligne par ligne

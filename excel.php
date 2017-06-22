@@ -8,7 +8,7 @@ include("connexion.php");
 include("formulaire.php");
 
 
-mysql_set_charset('utf8',$dbb);
+mysqli_set_charset('utf8',$dbb);
 
 function NoAccent($texte)
 {
@@ -32,8 +32,8 @@ if($_FILES["file"]["type"] != "application/vnd.ms-excel"){											// Si le fi
 	die("Aucun fichier ou fichier au mauvais format sélectionné");								// echo erreur
 }
 elseif(is_uploaded_file($_FILES['file']['tmp_name'])){													// sinon
- mysql_select_db("do");
- mysql_set_charset('utf8');
+ mysqli_select_db("do");
+ mysqli_set_charset('utf8');
 
 
  echo "Fichier ajouté à la base de donnée";																			// echo c est bon
@@ -47,18 +47,18 @@ $handle = fopen($_FILES['file']['tmp_name'], "r");
 			print_r($datarow);
 
 
-			$att0 = mysql_real_escape_string($data[0]);
-			$att1 = mysql_real_escape_string($data[1]);
-			$att2 = mysql_real_escape_string($data[2]);
-			$att3 = mysql_real_escape_string($data[3]);
-			$att4 = mysql_real_escape_string($data[4]);
-			$att5 = mysql_real_escape_string($data[5]);
-			$att6 = mysql_real_escape_string($data[6]);
-			$att7 = mysql_real_escape_string($data[7]);
-			$att8 = mysql_real_escape_string($data[8]);
-			$att9 = mysql_real_escape_string($data[9]);
-			$att10 = mysql_real_escape_string($data[10]);
-			$att11 = mysql_real_escape_string($data[11]);
+			$att0 = mysqli_real_escape_string($data[0]);
+			$att1 = mysqli_real_escape_string($data[1]);
+			$att2 = mysqli_real_escape_string($data[2]);
+			$att3 = mysqli_real_escape_string($data[3]);
+			$att4 = mysqli_real_escape_string($data[4]);
+			$att5 = mysqli_real_escape_string($data[5]);
+			$att6 = mysqli_real_escape_string($data[6]);
+			$att7 = mysqli_real_escape_string($data[7]);
+			$att8 = mysqli_real_escape_string($data[8]);
+			$att9 = mysqli_real_escape_string($data[9]);
+			$att10 = mysqli_real_escape_string($data[10]);
+			$att11 = mysqli_real_escape_string($data[11]);
 
 
 
@@ -78,4 +78,4 @@ $handle = fopen($_FILES['file']['tmp_name'], "r");
 
 
 
-mysql_close();
+mysqli_close();
