@@ -1,13 +1,12 @@
-<body>
-<meta http-equiv=“Content-Type” content=“text/html; charset=utf-8”>
-<a href="../index.php" onclick='window.location.reload(false)'>Retour</a>
+
 <h1> GARAGE </h1>
 <?php
 
+header('Content-Type: index.php');
 header('Content-Type: text/html; charset=UTF-8');
 
 include("../connexion/connexion.php");
-
+include("../block/header.php");
 
 $res = $dbb->query("SELECT * FROM materiels");
 
@@ -29,19 +28,19 @@ $res = $dbb->query("SELECT * FROM materiels");
 <!-- <IMG src="pi_barcode.php?type=C39&code=861000000000000"> -->
 
     <tr>
-        <td>Arch</td>
-        <td>Urgence</td>
-        <td>Etat du dossier</td>
-        <td>Zone de stockage</td>
-        <td> N° Entrée CRESA </td>
-        <td> N° Contenu CRESA </td>
-        <td> Marque </td>
-        <td> Autre marque </td>
-        <td> Modèle/Type </td>
-        <td> N° IMEI </td>
-        <td> Titre </td>
-        <td> N° de Série </td>
-        <td> Description </td>
+      <td bgcolor="orange" >Arch</td>
+      <td bgcolor="orange" >Urgence</td>
+      <td bgcolor="orange" >Etat du dossier</td>
+      <td bgcolor="orange" >Zone de stockage</td>
+      <td bgcolor="orange" > N° Entrée CRESA </td>
+      <td bgcolor="orange" > N° Contenu CRESA </td>
+      <td bgcolor="orange" > Marque </td>
+      <td bgcolor="orange" > Autre marque </td>
+      <td bgcolor="orange" > Modèle/Type </td>
+      <td bgcolor="orange" > N° IMEI </td>
+      <td bgcolor="orange" > Titre </td>
+      <td bgcolor="orange" > N° de Série </td>
+      <td bgcolor="orange" > Description </td>
     </tr>
 
 
@@ -77,9 +76,9 @@ while($data = mysqli_fetch_array($res))
       <td><?php echo $data['Description']; ?></td>
 
 
-  <td><a href="../requetes/ajouter.php?id=<?php echo $data["id"]; ?> " >Ajouter</a></td>
-  <td><a href="../requetes/modifiergarage.php?id=<?php echo $data["id"]; ?> " >Modifier</a></td>
-  <td><a href="barcode.php?id=<?php echo $data["id"]; ?> " >Code-barres</a></td>
+  <td><a class="btn btn-success" href="../requetes/ajouter.php?id=<?php echo $data["id"]; ?> " role="button" >Ajouter</a></td>
+  <td><a class="btn btn-warning" href="../requetes/modifiergarage.php?id=<?php echo $data["id"]; ?> " role="button" >Modifier</a></td>
+  <td><a class="btn btn-info" href="barcode.php?id=<?php echo $data["id"]; ?> " role="button" >Code-barres</a></td>
   </tr>
 <?php
 

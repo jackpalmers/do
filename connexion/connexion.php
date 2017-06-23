@@ -2,7 +2,7 @@
 
 
 	$host = 'localhost';
-	$pass = '';
+	$pass = 'root';
 	$database = 'do';
 	$user = "root";
 	$port = 3306;

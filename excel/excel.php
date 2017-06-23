@@ -1,14 +1,25 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-theme.css" />
+<header class="block-header">
+
+  <div class="head">
+    <h1 class="title1"> <a href="../index.php">Accueil</a> </h1>
+    <div class="slogan"></div>
+  </div>
+
+</header>
 
 <?php
 
 header('Content-Type: text/html; charset=UTF-8');
 
-include("connexion.php");
-include("formulaire.php");
+include("../connexion/connexion.php");
 
 
-mysqli_set_charset('utf8',$dbb);
+
+
+mysqli_set_charset($dbb, 'utf8');
 
 function NoAccent($texte)
 {
@@ -32,8 +43,8 @@ if($_FILES["file"]["type"] != "application/vnd.ms-excel"){											// Si le fi
 	die("Aucun fichier ou fichier au mauvais format sélectionné");								// echo erreur
 }
 elseif(is_uploaded_file($_FILES['file']['tmp_name'])){													// sinon
- mysqli_select_db("do");
- mysqli_set_charset('utf8');
+ mysqli_select_db($dbb, "do");
+ mysqli_set_charset($dbb, 'utf8');
 
 
  echo "Fichier ajouté à la base de donnée";																			// echo c est bon
@@ -47,18 +58,18 @@ $handle = fopen($_FILES['file']['tmp_name'], "r");
 			print_r($datarow);
 
 
-			$att0 = mysqli_real_escape_string($data[0]);
-			$att1 = mysqli_real_escape_string($data[1]);
-			$att2 = mysqli_real_escape_string($data[2]);
-			$att3 = mysqli_real_escape_string($data[3]);
-			$att4 = mysqli_real_escape_string($data[4]);
-			$att5 = mysqli_real_escape_string($data[5]);
-			$att6 = mysqli_real_escape_string($data[6]);
-			$att7 = mysqli_real_escape_string($data[7]);
-			$att8 = mysqli_real_escape_string($data[8]);
-			$att9 = mysqli_real_escape_string($data[9]);
-			$att10 = mysqli_real_escape_string($data[10]);
-			$att11 = mysqli_real_escape_string($data[11]);
+			$att0 = mysqli_escape_string($dbb, $data[0]);
+			$att1 = mysqli_escape_string($dbb, $data[1]);
+			$att2 = mysqli_escape_string($dbb, $data[2]);
+			$att3 = mysqli_escape_string($dbb, $data[3]);
+			$att4 = mysqli_escape_string($dbb, $data[4]);
+			$att5 = mysqli_escape_string($dbb, $data[5]);
+			$att6 = mysqli_escape_string($dbb, $data[6]);
+			$att7 = mysqli_escape_string($dbb, $data[7]);
+			$att8 = mysqli_escape_string($dbb, $data[8]);
+			$att9 = mysqli_escape_string($dbb, $data[9]);
+			$att10 = mysqli_escape_string($dbb, $data[10]);
+			$att11 = mysqli_escape_string($dbb, $data[11]);
 
 
 
@@ -78,4 +89,4 @@ $handle = fopen($_FILES['file']['tmp_name'], "r");
 
 
 
-mysqli_close();
+mysqli_close($dbb);
