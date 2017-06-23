@@ -1,8 +1,11 @@
 <!-- Debut bouton rafraichir -->
-<head>
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-theme.css" />
-</head>
+<?php
+
+include("block/header.php");
+
+
+ ?>
+
 <input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
 
 <!-- Fin bouton rafraichir -->
@@ -11,10 +14,10 @@
 
 session_start();
 
-error_reporting(-1);
 
 include("connexion/connexion.php");
 include("pages/formulaire.php");
+
 
 
 //Page à Ouvert si le get est present
@@ -30,5 +33,6 @@ if( isset($_GET["page"]) )
 
 if($dbb) mysqli_close($dbb);
 
+include("block/footer.php");
 
 ?>

@@ -7,16 +7,10 @@ $res = $dbb->query("SELECT * FROM materiels");
 ?>
 
 
-
-<!-- Bouton accueil -->
-<a href="../index.php" onclick='window.location.reload(false)'>Accueil</a>
-
-
-
 <!-- DEBUT Formulaire ajout fichier excel -> bdd -->
 
 
-<form enctype="multipart/form-data" action="../excel/excel.php" method="POST">
+<form enctype="multipart/form-data" action="excel/excel.php" method="POST">
  <p><input name="file" type="file" />
  <p><input type="submit" value="Importer" onclick='window.location.reload(false)' /></p>
 </form>
@@ -34,16 +28,18 @@ $res = $dbb->query("SELECT * FROM materiels");
 
 
                                                                                 <!--  FIN 2eme formulaire -->
-
+</br>
 
                                                                                 <!-- DEBUT Formulaire Garage (arriver après import) -->
 
 <a class="btn btn-info" href="pages/garage.php">Liste garage</a>
                                                                                 <!-- FIN Formulaire Garage -->
-</br>
+</br></br>
                                                                                 <!-- Debut formulaire materiel archivé -->
 
 <a class="btn btn-info" href="pages/archive.php">Archive </a>
+
+</br></br>
                                                                                     <!-- Fin formulaire Archive -->
 
 <?php //-----------------------------------------------------FORMULAIRE AJOUTER--------------------------------------------------- ?>
