@@ -9,14 +9,16 @@
 </head>
 
 <header class="block-header">
-    <nav class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-            <li class="navbar-header"><a  href="../index.php" >Accueil</a></li>
-            <li><a href="../pages/garage.php">Garage</a></li>
-            <li><a href="../pages/materiels.php">Liste matériels</a></li>
-            <li><a href="../pages/archive.php">Archive</a></li>
-        </ul>
-    </nav>
-
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="navbar-header"><a  href="../index.php" >Accueil</a></li>
+                <li><a href="../pages/garage.php">Garage</a></li>
+                <li><a href="../pages/materiels.php">Liste matériels</a></li>
+                <li><a href="../pages/archive.php">Archive</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <body>
+    <div class="container">
