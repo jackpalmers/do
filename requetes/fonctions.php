@@ -15,7 +15,7 @@ $id= $_GET["id"];
 
       {
         echo 'Matériel archivé avec succès. </br>
-              <a href="../pages/garage.php" onclick="window.location.reload(false)">Retour à la liste du matériel </a>';
+              <a href="../pages/temporaire.php" onclick="window.location.reload(false)">Retour à la liste du matériel </a>';
       }
       else
       {

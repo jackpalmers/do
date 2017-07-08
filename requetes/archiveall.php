@@ -2,6 +2,7 @@
 
 
 include("connexion.php");
+include("../block/header.php");
 
 
 

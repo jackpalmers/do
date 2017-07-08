@@ -27,7 +27,6 @@ $data = mysqli_fetch_assoc($req);
 
 
     <form method='POST' action='../requetes/deleteselect.php'>
-
       <table>
 
         <tr>
@@ -64,14 +63,14 @@ $data = mysqli_fetch_assoc($req);
         <td><?php echo $data['Urgence']; ?></td>
         <td><?php echo $data['Etat_du_dossier']; ?></td>
         <td><?php echo $data['Zone_de_stockage']; ?></td>
-        <td><?php echo $data['N°Entree_CRESA']; ?></td>
-        <td><?php echo $data['N°Contenu_CRESA']; ?></td>
+        <td><?php echo $data['Num_Entree_CRESA']; ?></td>
+        <td><?php echo $data['Num_Contenu_CRESA']; ?></td>
         <td><?php echo $data['Marque']; ?></td>
         <td><?php echo $data['Autre_marque']; ?></td>
         <td><?php echo $data['Modele_Type']; ?></td>
-        <td><?php echo $data['N°IMEI']; ?></td>
+        <td><?php echo $data['Num_IMEI']; ?></td>
         <td><?php echo $data['Titre']; ?></td>
-        <td><?php echo $data['N°de_Serie']; ?></td>
+        <td><?php echo $data['Num_de_Serie']; ?></td>
         <td><?php echo $data['Description']; ?></td>
 
 
@@ -84,15 +83,12 @@ $data = mysqli_fetch_assoc($req);
       }
 
       ?>
-      <input accesskey="S" name="Supprimer" value="Supprimer la sélection" type="submit">
+      <input accesskey="S" name="Supprimer" value="Supprimer la sélection" type="submit" /><br />
 
-<?php
-
-
-
-?>
+      <input id='cocher-tout' type="checkbox" onchange="cocherTout(this.checked)" /> Tout cocher <br />
 
 </table>
 </form>
 
+<script src="../js/cocherTout.js" ></script>
 <script src="../js/checkcolor.js" ></script>

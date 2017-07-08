@@ -31,14 +31,14 @@ CREATE TABLE `materiels` (
   `Urgence` varchar(80) NOT NULL,
   `Etat_du_dossier` varchar(80) NOT NULL,
   `Zone_de_stockage` varchar(80) NOT NULL,
-  `N°Entree_CRESA` varchar(80) NOT NULL,
-  `N°Contenu_CRESA` varchar(80) NOT NULL,
+  `Num_Entree_CRESA` varchar(80) NOT NULL,
+  `Num_Contenu_CRESA` varchar(80) NOT NULL,
   `Marque` varchar(80) NOT NULL,
   `Autre_marque` varchar(80) NOT NULL,
   `Modele_Type` varchar(80) NOT NULL,
-  `N°IMEI` varchar(80) NOT NULL,
+  `Num_IMEI` varchar(80) NOT NULL,
   `Titre` varchar(80) NOT NULL,
-  `N°de_Serie` varchar(80) NOT NULL,
+  `Num_de_Serie` varchar(80) NOT NULL,
   `Description` varchar(80) NOT NULL,
   `Archive` int(10) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

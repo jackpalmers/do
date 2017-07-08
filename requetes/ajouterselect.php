@@ -1,8 +1,9 @@
-<a href="../pages/garage.php" onclick='window.location.reload(false)'>Retour</a>
+<a href="../pages/temporaire.php" onclick='window.location.reload(false)'>Retour</a>
 
 <?php
 
 include('../connexion/connexion.php');
+include('../block/header.php');
 
 $delete = isset($_POST['delete']) ? $_POST['delete'] : array();
 $valeur = isset($_POST['valeur']) ? $_POST['valeur'] : array();

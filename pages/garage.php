@@ -23,9 +23,7 @@ $res = $dbb->query("SELECT * FROM materiels");
 
 
   <form name="formulaire" method='POST' action='../requetes/ajouterselect.php'>
-  <table>
-
-<!-- <IMG src="pi_barcode.php?type=C39&code=861000000000000"> -->
+    <table>
 
     <tr>
       <td bgcolor="orange" >Arch</td>
@@ -42,7 +40,6 @@ $res = $dbb->query("SELECT * FROM materiels");
       <td bgcolor="orange" > N° de Série </td>
       <td bgcolor="orange" > Description </td>
     </tr>
-
 
 
 
@@ -171,11 +168,13 @@ echo "</ul>";
 
 ?>
 
+<input type="checkbox" onchange="cocherTout(this.checked)" /> Tout cocher <br />
 
 </table>
 
 </form>
 
+<script src="../js/cocherTout.js" ></script>
 <script src="../js/checkcolor.js" ></script>
 
 </body>

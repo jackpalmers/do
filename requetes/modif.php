@@ -1,6 +1,7 @@
 <?php
 
 include("../connexion/connexion.php");
+include("../block/header.php");
 
 
 $id = $_GET["id"];
@@ -27,14 +28,14 @@ if(isset($_POST['modifier'])) {
 		$res = mysqli_query($dbb,"UPDATE materiels SET  Urgence='$urgence',
 																		Etat_du_dossier='$etat',
 																		Zone_de_stockage='$stockage',
-																		N°Entree_CRESA='$entree',
-																		N°Contenu_CRESA='$contenu',
+																		Num_Entree_CRESA='$entree',
+																		Num_Contenu_CRESA='$contenu',
 																		Marque='$marque',
 																		Autre_marque='$autre',
 																		Modele_Type='$modele',
-																		N°IMEI='$imei',
+																		Num_IMEI='$imei',
 																		Titre='$titre',
-																		N°de_Serie='$serie',
+																		Num_de_Serie='$serie',
 																		Description='$description'
 																		WHERE id =" .$id);
 

@@ -3,6 +3,7 @@
 <?php
 
 include('../connexion/connexion.php');
+include("../block/header.php");
 
 $delete = isset($_POST['delete']) ? $_POST['delete'] : array();
 $valeur = isset($_POST['valeur']) ? $_POST['valeur'] : array();
@@ -15,13 +16,26 @@ else{
 
 
 foreach ($delete as $valeur){
-$sql= mysqli_query($dbb,"UPDATE materiels SET Archive = 0 WHERE id='$valeur'");
+$sql= mysqli_query($dbb,"SELECT * FROM materiels WHERE Archive = 1 AND id='$valeur'");
 
+while ($data = mysqli_fetch_array($sql))
 
-}
+{
 
 echo 'Les enregistrements ont été archivés';
 
+echo ' - ';
+echo $data['id'];
+echo " - ";
+echo $data["Num_Entree_CRESA"];
+echo $data["Num_Contenu_CRESA"];
+echo $data["Modele_Type"];
+echo $data["Num_IMEI"];
+echo $data["Num_de_Serie"];
+echo $data["Description"];
+
+}
+}
 }
 
 ?>

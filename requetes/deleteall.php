@@ -2,6 +2,7 @@
 
 
 include("../connexion/connexion.php");
+include("../block/header.php");
 
 
      //Tu recuperes l'id du contact

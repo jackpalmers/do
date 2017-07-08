@@ -1,16 +1,7 @@
-<!-- Debut bouton rafraichir -->
 <?php
 
-include("block/header.php");
+include("block/header-index.php");
 
-
- ?>
-
-<input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
-
-<!-- Fin bouton rafraichir -->
-
-<?php
 
 session_start();
 

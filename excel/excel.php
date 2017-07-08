@@ -1,8 +1,3 @@
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-theme.css" />
-<header class="block-header">
-
   <div class="head">
     <h1 class="title1"> <a href="../index.php">Accueil</a> </h1>
     <div class="slogan"></div>
@@ -15,6 +10,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 
 include("../connexion/connexion.php");
+include("../block/header.php");
 
 
 
