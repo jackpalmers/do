@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     checkboxes[i].onchange = function(){
         this.parentElement
             .parentElement
-            .style.backgroundColor = this.checked?colorChecked:colorUnchecked;
+            .style.backgroundColor = this.checked ? colorChecked: colorUnchecked;
         this.checked ? numberChecked++:numberChecked--;
         checkBoxAll = document.getElementById('cocher-tout');
         checkBoxAll.checked = numberChecked === checkboxes.length?true:false;

@@ -33,7 +33,6 @@ function ajouterCocheModal(){
                 toAppend.removeChild(listTd[listTd.length -1])
                 toAppend.removeChild(listTd[0]) //remove the checkbox
                 toAppend.style = ''; //remove style
-                console.log(toAppend);
                 modalp.append(toAppend);
         }
     }
