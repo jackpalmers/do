@@ -1,6 +1,7 @@
 <?php
 
 include("../connexion/connexion.php");
+include("../block/header.php");
 
 
 $id = $_GET["id"];

@@ -5,7 +5,7 @@
 
 include("../connexion/connexion.php");
 
-$res = $dbb->query("SELECT N°Entree_CRESA, N°IMEI, N°de_Serie FROM materiels");
+$res = $dbb->query("SELECT Num__Entree_CRESA, Num_IMEI, Num_de_Serie FROM materiels");
 
 
 ?>
@@ -27,9 +27,9 @@ $res = $dbb->query("SELECT N°Entree_CRESA, N°IMEI, N°de_Serie FROM materiels"
             {
             ?>
                 <tr>
-                    <td><?php echo $donnees['N°Entree_CRESA'];?></td>
-                    <td><?php echo $donnees['N°IMEI'];?></td>
-                    <td><?php echo $donnees['N°de_Serie'];?></td>
+                    <td><?php echo $donnees['Num_Entree_CRESA'];?></td>
+                    <td><?php echo $donnees['Num_IMEI'];?></td>
+                    <td><?php echo $donnees['Num_de_Serie'];?></td>
                 </tr>
             <?php
             }

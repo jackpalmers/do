@@ -3,6 +3,7 @@
 <?php
 
 include('../connexion/connexion.php');
+include("../block/header.php");
 
 $delete = isset($_POST['delete']) ? $_POST['delete'] : array();
 $valeur = isset($_POST['valeur']) ? $_POST['valeur'] : array();

@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
   for (var i = 0; i < checkboxes.length; i++){
     checkboxes[i].onchange = function(){
-      if (this.checked){
-        this.parentElement.parentElement.style.backgroundColor = '#ffff99';
-      }
-      else{
-        this.parentElement.parentElement.style.backgroundColor = '#99ccff';
-      }
+        this.parentElement
+            .parentElement
+            .style.backgroundColor = this.checked ? colorChecked: colorUnchecked;
+        this.checked ? numberChecked++:numberChecked--;
+        checkBoxAll = document.getElementById('cocher-tout');
+        checkBoxAll.checked = numberChecked === checkboxes.length?true:false;
+
     }
   }
 })

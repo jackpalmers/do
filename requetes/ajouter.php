@@ -1,8 +1,10 @@
 <?php
 
 include ("../connexion/connexion.php");
+include("../block/header.php");
 
-$id= $_GET["id"];
+
+  $id= $_GET["id"];
 
 
       $req = mysqli_query($dbb, "UPDATE materiels SET Archive = 1 WHERE id = ".$id );
@@ -11,7 +13,7 @@ $id= $_GET["id"];
 
       {
         echo 'Matériel archivé avec succès. </br>
-              <a href="../pages/garage.php" onclick="window.location.reload(false)">Retour à la liste du matériel </a>';
+              <a href="../pages/temporaire.php" onclick="window.location.reload(false)">Retour à la liste du matériel </a>';
       }
       else
       {

@@ -1,3 +1,5 @@
+<h1> ACCUEIL </h1>
+
 <?php
 
 include("connexion/connexion.php");
@@ -10,15 +12,21 @@ $res = $dbb->query("SELECT * FROM materiels");
 <!-- DEBUT Formulaire ajout fichier excel -> bdd -->
 
 
-<form enctype="multipart/form-data" action="excel/excel.php" method="POST">
+<form enctype="multipart/form-data" action="PHPExcel/excel.php" method="POST">
  <p><input name="file" type="file" />
  <p><input type="submit" value="Importer" onclick='window.location.reload(false)' /></p>
 </form>
 
 <!-- FIN Formulaire ajout fichier excel -> bdd  -->
 
+<a class="btn btn-warning" href="connexion/initdb.php" > Créer tables </a></br></br>
+
+
+
+<a class="btn btn-danger" href="pages/liste_cresa.php"> Liste cresa </a></br></br>
 
                                                                                 <!--  DEBUT 2eme formulaire -->
+
 
 
 <p>
@@ -30,10 +38,10 @@ $res = $dbb->query("SELECT * FROM materiels");
                                                                                 <!--  FIN 2eme formulaire -->
 </br>
 
-                                                                                <!-- DEBUT Formulaire Garage (arriver après import) -->
+                                                                                <!-- DEBUT Formulaire Temporaire (arriver après import) -->
 
-<a class="btn btn-info" href="pages/garage.php">Liste garage</a>
-                                                                                <!-- FIN Formulaire Garage -->
+<a class="btn btn-info" href="pages/temporaire.php">Liste temporaire</a>
+                                                                                <!-- FIN Formulaire Temporaire -->
 </br></br>
                                                                                 <!-- Debut formulaire materiel archivé -->
 
@@ -44,7 +52,7 @@ $res = $dbb->query("SELECT * FROM materiels");
 
 <?php //-----------------------------------------------------FORMULAIRE AJOUTER--------------------------------------------------- ?>
 
-<form method="post" action="../excel/imei.php">
+<form method="post" action="excel/imei.php">
 <p>
     <input type="submit" value="Liste N°IMEI -> export" />
 
@@ -74,8 +82,8 @@ $res = $dbb->query("SELECT * FROM materiels");
 if(isset($_POST["ajoute"]))
 	{
 		//on éxécute la requête, en sécurisant les champs saisis par l'utilisateur
-		$resultat = mysqli_query( $dbb, " INSERT INTO materiels(Urgence, Etat_du_dossier, Zone_de_stockage, N°Entree_CRESA, N°Contenu_CRESA, Marque,
-                                                  Autre_marque, Modele_Type, N°IMEI, Titre, N°de_serie, Description, Archive)
+		$resultat = mysqli_query( $dbb, " INSERT INTO materiels(Urgence, Etat_du_dossier, Zone_de_stockage, Num_Entree_CRESA, Num_Contenu_CRESA, Marque,
+                                                  Autre_marque, Modele_Type, Num_IMEI, Titre, Num_de_serie, Description, Archive)
 
     VALUES( '".$_POST["urgence"]."', '".$_POST["etat"]."', '".$_POST["stockage"]."', '".$_POST["entree"]."', '".$_POST["contenu"]."',
     '".$_POST["marque"]."', '".$_POST["autre"]."', '".$_POST["modele"]."', '".$_POST["imei"]."', '".$_POST["titre"]."',

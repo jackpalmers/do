@@ -1,6 +1,7 @@
 <?php
 
 include("../connexion/connexion.php");
+include("../block/header.php");
 
 $id = $_GET['id'];
 
@@ -22,14 +23,14 @@ $res = mysqli_query($dbb, "SELECT * FROM materiels WHERE Archive = 1 AND id = " 
             $query = "UPDATE materiels SET  Urgence='".addslashes($_POST['urgence'])."',
                                             Etat_du_dossier='".addslashes($_POST['etat'])."',
                                             Zone_de_stockage='".addslashes($_POST['stockage'])."',
-                                            N°Entree_CRESA='".addslashes($_POST['entree'])."',
-                                            N°Contenu_CRESA='".addslashes($_POST['contenu'])."',
+                                            Num_Entree_CRESA='".addslashes($_POST['entree'])."',
+                                            Num_Contenu_CRESA='".addslashes($_POST['contenu'])."',
                                             Marque='".addslashes($_POST['marque'])."',
                                             Autre_marque='".addslashes($_POST['autre'])."',
                                             Modele_Type='".addslashes($_POST['modele'])."',
-                                            N°IMEI='".addslashes($_POST['imei'])."',
+                                            Num_IMEI='".addslashes($_POST['imei'])."',
                                             Titre='".addslashes($_POST['titre'])."',
-                                            N°de_Serie='".addslashes($_POST['serie'])."',
+                                            Num_de_Serie='".addslashes($_POST['serie'])."',
                                             Description='".addslashes($_POST['description '])."',
                                             WHERE id='".$_GET['id']."'";
                       echo $query;
@@ -67,7 +68,7 @@ $res = mysqli_query($dbb, "SELECT * FROM materiels WHERE Archive = 1 AND id = " 
     <input type="text" class="form-control" name="stockage" value="'.$donnees['Zone_de_stockage'].'" placeholder="Zone de stockage">
 
     <span class="input-group-addon" id="basic-addon3">N° Entrée CRESA : </span>
-    <input type="text" class="form-control" name="entree" value="'.$donnees['N°Entree_CRESA'].'" placeholder="N°Entrée CRESA">
+    <input type="text" class="form-control" name="entree" value="'.$donnees['Num_Entree_CRESA'].'" placeholder="N°Entrée CRESA">
   </div>';
 
 
@@ -76,7 +77,7 @@ $res = mysqli_query($dbb, "SELECT * FROM materiels WHERE Archive = 1 AND id = " 
 
   echo '<div class="input-group">
     <span class="input-group-addon" id="basic-addon3">N° Contenu CRESA : </span>
-    <input type="text" class="form-control" name="contenu" value="'.$donnees['N°Contenu_CRESA'].'" placeholder="N° Contenu CRESA">
+    <input type="text" class="form-control" name="contenu" value="'.$donnees['Num_Contenu_CRESA'].'" placeholder="N° Contenu CRESA">
 
     <span class="input-group-addon" id="basic-addon3">Marque : </span>
     <input type="text" class="form-control" name="marque" value="'.$donnees['Marque'].'" placeholder="Marque">
@@ -92,13 +93,13 @@ $res = mysqli_query($dbb, "SELECT * FROM materiels WHERE Archive = 1 AND id = " 
 
 echo '<div class="input-group">
   <span class="input-group-addon" id="basic-addon3">N° IMEI : </span>
-  <input type="text" class="form-control" name="imei" value="'.$donnees['N°IMEI'].'" placeholder="N° IMEI">
+  <input type="text" class="form-control" name="imei" value="'.$donnees['Num_IMEI'].'" placeholder="N° IMEI">
 
   <span class="input-group-addon" id="basic-addon3">Titre : </span>
   <input type="text" class="form-control" name="titre" value="'.$donnees['Titre'].'" placeholder="Titre">
 
   <span class="input-group-addon" id="basic-addon3">N° de série : </span>
-  <input type="text" class="form-control" name="serie" value="'.$donnees['N°de_Serie'].'" placeholder="N° de série">
+  <input type="text" class="form-control" name="serie" value="'.$donnees['Num_de_Serie'].'" placeholder="N° de série">
 
   <span class="input-group-addon" id="basic-addon3">Description : </span>
   <input type="text" class="form-control" name="description" value="'.$donnees['Description'].'" placeholder="Description">
@@ -108,8 +109,6 @@ echo "</br>"; ?>
 
 <td><a href="../requetes/modif.php?id=<?php echo $donnees["id"]; ?> " >
 <input type="submit" name="modifier" value="Modifier" class="btn btn-block btn-warning" /></a>
-
-
 
 
 
